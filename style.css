@@ -1,0 +1,118 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;    
+    display: flex;
+    flex-direction: column;     /*Stak header, main og footer oven på hinanden*/
+}
+
+header {
+    background-color: #1e293b;
+    width: 100%;
+    padding: 1rem;
+}
+
+.grid-nav {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    max-width: 800px;
+    margin: 0 auto; /*Centrerer knap gruppen inde i headeren*/
+}
+
+.nav-button {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: 100%;
+}
+
+.nav-button:hover {
+    background-color: #2563eb;
+}
+
+@media (max-width: 600px) {
+    .grid-nav {
+        grid-template-columns: 1fr;
+    }
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    /*Centrerer lodret*/
+    align-items: center;        /*Centrerer vandret*/
+    padding: 2rem;
+    text-align: center;
+}
+
+
+
+h1, h2 {
+    text-align: center;
+}
+
+footer {
+    background-color: #0f172a;
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+}
+
+content {
+    align-content: center;
+}
+
+
+/* ----------------------------------*/
+
+/* Gør formularen til et pænt, centreret grid */
+#calorie-form {
+  display: grid;
+  grid-template-columns: auto 1fr; /* Venstre kolonne tilpasser sig teksten, højre fylder resten */
+  gap: 12px 16px;                  /* 12px afstand lodret, 16px vandret */
+  align-items: center;             /* Justerer tekst og felt lodret i midten af hver række */
+  max-width: 450px;                /* Sætter en pæn maksbredde på formularen */
+  width: 100%;
+  text-align: left;                /* Venstrestiller teksten inde i formularen */
+  margin: 0 auto;
+}
+
+/* Styler input og select felter ensartet */
+#calorie-form input[type="number"],
+#calorie-form select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Sørg for at knappen og overskrifter strækker sig over begge kolonner */
+#calorie-form button,
+#calorie-form .full-width {
+  grid-column: span 2;
+  margin-top: 10px;
+}
+
+/* Speciel håndtering til radio-knapper (Mand/Kvinde) så de står pænt på linje */
+.radio-group {
+  grid-column: 2;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
